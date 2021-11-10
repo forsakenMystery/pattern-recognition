@@ -1,0 +1,10 @@
+m=[0; 2]';
+S(:,:,1)=[0.2];
+S(:,:,2)=[0.2];
+P=[1/3 2/3];
+N=1000;
+randn('seed',0);
+[X]=generate_gauss_classes(m,S,P,N);
+x=-5:0.1:5;
+pdfx=(1/3)*(1/sqrt(2*pi*0.2))*exp(-(x.^2)/0.4)+(2/3)*(1/sqrt(2*pi*0.2))*exp(-((x-2).^2)/0.4);
+plot(x,pdfx); hold;
